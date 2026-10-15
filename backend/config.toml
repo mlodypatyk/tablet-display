@@ -1,0 +1,26 @@
+[general]
+# Co ile sekund backend odświeża dane i co ile frontend odpytuje /api/dashboard
+refresh_seconds = 60
+
+[weather]
+latitude = 52.2297
+longitude = 21.0122
+timezone = "Europe/Warsaw"
+
+[transit]
+# Maksymalna liczba odjazdów wyświetlana dla każdego przystanku
+max_departures = 6
+
+# Przystanki ZTM. busstop_id to numer "zespołu przystankowego",
+# busstop_nr to numer "słupka" (np. 01, 02).
+# Jak znaleźć numery: patrz README -> "Transit stops".
+[[transit.stops]]
+name = "Budowlana"
+busstop_id = "1080"
+busstop_nr = "03"
+
+[train]
+station_name = "Warszawa Praga"
+# Można podać własny numer EVA; pusty = rozpoznanie automatyczne po nazwie
+eva_id = "5104161"
+max_departures = 8

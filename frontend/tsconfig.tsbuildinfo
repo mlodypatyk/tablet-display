@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/types.ts","./src/components/clock.tsx","./src/components/statusbar.tsx","./src/components/trainboard.tsx","./src/components/transitboard.tsx","./src/components/weathercard.tsx"],"version":"5.9.3"}
