@@ -81,6 +81,16 @@ def _parse_board(html: str, tz: ZoneInfo, now: datetime) -> list[dict]:
             continue
 
         train_el = row.find("span", class_="train-name")
+        short_el = row.find("span", class_="upcase")
+        short_name = ""
+        if short_el is not None:
+            sibling = short_el.next_sibling
+            if sibling is not None:
+                short_name = (
+                    sibling.get_text(strip=True)
+                    if hasattr(sibling, "get_text")
+                    else str(sibling).strip()
+                )
         cat_el = row.find("img", class_="transport-type")
         dest_el = row.find("span", class_="bold")
         dest_link = dest_el.find("a") if dest_el else None
@@ -109,7 +119,7 @@ def _parse_board(html: str, tz: ZoneInfo, now: datetime) -> list[dict]:
             {
                 "time": time_text,
                 "destination": dest_link.get_text(strip=True) if dest_link else "",
-                "train": train_el.get_text(strip=True) if train_el else "",
+                "train": short_name or (train_el.get_text(strip=True) if train_el else ""),
                 "category": cat_el.get("alt", "") if cat_el else "",
                 "track": track,
                 "status": status,

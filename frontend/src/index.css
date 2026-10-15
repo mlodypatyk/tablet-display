@@ -77,6 +77,11 @@ body {
   gap: 28px;
 }
 
+.weather__icon {
+  font-size: 48px;
+  line-height: 1;
+}
+
 .weather__main {
   display: flex;
   align-items: baseline;
@@ -178,7 +183,7 @@ body {
 
 .departure {
   display: grid;
-  grid-template-columns: 64px 1fr auto 90px;
+  grid-template-columns: 48px 1fr auto;
   align-items: center;
   gap: 14px;
   padding: 10px 8px;
@@ -186,19 +191,21 @@ body {
 }
 
 .departure__line {
+  grid-column: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: var(--panel-2);
   border-radius: 8px;
   font-weight: 700;
-  font-size: 22px;
-  padding: 4px 0;
-  min-width: 56px;
+  font-size: 15px;
+  padding: 1px 0;
+  min-width: 32px;
 }
 
 .departure__dir {
-  font-size: 20px;
+  grid-column: 2;
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -210,6 +217,7 @@ body {
 }
 
 .departure__time {
+  grid-column: 3;
   text-align: right;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
@@ -217,28 +225,34 @@ body {
 
 .train {
   display: grid;
-  grid-template-columns: 80px 130px 1fr 70px auto;
+  grid-template-columns: 40px 1fr auto auto;
   align-items: center;
   gap: 14px;
   padding: 10px 8px;
   border-top: 1px solid var(--border);
 }
 
-.train__time {
-  font-size: 24px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
 .train__name {
+  grid-column: 1;
   color: var(--accent);
   font-weight: 600;
 }
 
 .train__dest {
+  grid-column: 2;
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.train__status {
+  grid-column: 3;
+}
+
+.train__time {
+  grid-column: 4;
+  font-variant-numeric: tabular-nums;
 }
 
 .train__track {

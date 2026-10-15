@@ -3,7 +3,6 @@ import Clock from './components/Clock'
 import WeatherCard from './components/WeatherCard'
 import TransitBoard from './components/TransitBoard'
 import TrainBoard from './components/TrainBoard'
-import StatusBar from './components/StatusBar'
 
 export default function App() {
   const { data, error } = useDashboard(60_000)
@@ -26,9 +25,7 @@ export default function App() {
         ) : (
           <section className="board board--empty">Ładowanie pociągów…</section>
         )}
-      </main>
-
-      <StatusBar data={data} error={error} />
+      </main> 
     </div>
   )
 }
