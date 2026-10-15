@@ -25,6 +25,7 @@ export default function App() {
         ) : (
           <section className="board board--empty">Ładowanie pociągów…</section>
         )}
+        {error != null && <span> {error} </span>}
       </main> 
     </div>
   )
