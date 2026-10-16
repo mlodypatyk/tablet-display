@@ -9,7 +9,7 @@ timezone = "Europe/Warsaw"
 
 [transit]
 # Maksymalna liczba odjazdów wyświetlana dla każdego przystanku
-max_departures = 6
+max_departures = 12
 
 # Przystanki ZTM. busstop_id to numer "zespołu przystankowego",
 # busstop_nr to numer "słupka" (np. 01, 02).
@@ -23,4 +23,4 @@ busstop_nr = "03"
 station_name = "Warszawa Praga"
 # Można podać własny numer EVA; pusty = rozpoznanie automatyczne po nazwie
 eva_id = "5104161"
-max_departures = 8
+max_departures = 12
