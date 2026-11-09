@@ -7,7 +7,7 @@ import httpx
 from ..config import Settings, Stop
 from .base import Provider
 
-ZTM_URL = "https://api.um.warszawa.pl/api/action/dbtimetable_get"
+ZTM_URL = "https://api.um.warszawa.pl/api/action/dbtimetable_get/"
 
 # Identyfikatory "metod" API ZTM (dbtimetable_get)
 LINES_METHOD = "88cd555f-6f31-43ca-9de4-66c479ad5942"      # linie obsługujące słupek
